@@ -1,0 +1,117 @@
+{
+  "numerical_kernels": [
+    {
+      "original": "shared_label_revision_20261019_v19/controls/binary_budget_v15.py",
+      "original_sha256": "0bcad344838579dbf9766329ee6e2985b4cad0ae7ffa49955b7b5f8cf60ec8d8",
+      "export": "src/harm_budgeted_updates/_binary.py",
+      "changes": "Unchanged computational source."
+    },
+    {
+      "original": "shared_label_revision_20261019_v19/controls/control_paths_v18.py",
+      "original_sha256": "b72b729f52d035bb4e9d98713fe2e3143b8c490b15ad588e4eb3dcbd6d9f6769",
+      "export": "src/harm_budgeted_updates/_paths.py",
+      "changes": "Relative package imports and removal of environment-specific search paths only."
+    },
+    {
+      "original": "shared_label_revision_20261019_v19/controls/robust_common_v17.py",
+      "original_sha256": "176368b5456062360369d9cb9625c5dc0092e2d70d2b736b39e210714b8214e1",
+      "export": "src/harm_budgeted_updates/_robust.py",
+      "changes": "Relative package imports and removal of environment-specific search paths only."
+    },
+    {
+      "original": "shared_label_revision_20261021_v24/gamma_study/single_sort_metrics_v24.py",
+      "original_sha256": "e82c5206df24453885e167233236ccf5e78016f058dbca562e947949d5d79b38",
+      "export": "src/harm_budgeted_updates/metrics.py",
+      "changes": "Relative package imports and removal of environment-specific search paths only."
+    },
+    {
+      "original": "shared_label_revision_20261021_v24/gamma_study/point_backend_v24.py",
+      "original_sha256": "a2718f4b8a462ddcc5cc4b29c2bd0fc3d191de171d5dc74fe67e2c22dd5ca86b",
+      "export": "src/harm_budgeted_updates/_point_backend.py",
+      "changes": "Relative package imports and removal of environment-specific search paths only."
+    },
+    {
+      "original": "shared_label_revision_20261021_v24/target_study/target_backend_v24.py",
+      "original_sha256": "38f780dfc7b2b9293bc926e370615e455ab058c83d499cccf555c4c1483dac9b",
+      "export": "src/harm_budgeted_updates/target_paths.py",
+      "changes": "Relative package imports and removal of environment-specific search paths only."
+    },
+    {
+      "original": "shared_label_revision_20261020_v23/external_baselines/trauble_beliefs_v23.py",
+      "original_sha256": "430fc43b01f3c0953d68c575634cce53e7a350795b4d7e010e585af413e14267",
+      "export": "src/harm_budgeted_updates/bayesian.py",
+      "changes": "Unchanged computational source."
+    }
+  ],
+  "predictor_training": {
+    "description": "Computational functions extracted from the paper experiment sources; file I/O and orchestration replaced with public NPZ interfaces.",
+    "sources": {
+      "tree": {
+        "file": "shared_label_revision_20261019_v16/strong_reference/run_strong_fraud_v16.py",
+        "sha256": "4075a126928628efeae1a8331af7d7ce69f01cb2b07678f3268ac79f4218fdc9"
+      },
+      "upstream": {
+        "file": "shared_label_revision_20261019_v16/strong_reference/upstream_kernel_v15.py",
+        "sha256": "e22423278f21f861d0ba2d2fed2c1b0dcd99b451ec2ab38de45c97dd2e301751"
+      },
+      "sage": {
+        "file": "shared_label_revision_20261020_v21/graph_models/run_graph_models_v21.py",
+        "sha256": "597eeed4f303dbfcd3a2aff7937dc99259390260639b3ae1222175b16a45cb40"
+      },
+      "temporal": {
+        "file": "shared_label_revision_20261019_v20/temporal/run_temporal_v20.py",
+        "sha256": "1809a26aeb10de1f98caf7a486094a573a7a172096636dbf8d2f50af129edf68"
+      },
+      "large_update": {
+        "file": "shared_label_revision_20261021_v26/large_update/run_large_update_v26.py",
+        "sha256": "77a56f5847284cf35d87b0b4f923f35e49df085b038f15ba12600d8537cc288b"
+      }
+    },
+    "adaptations": [
+      "Removed host-specific paths and experiment orchestration.",
+      "GraphSAGE device placement is configurable; objectives, architecture, stopping, and calibration remain the original ones.",
+      "Role masks may be supplied to preserve the exact original acquisitions.",
+      "Dataset conversion and response downloads are outside this source-only package."
+    ],
+    "function_mapping": {
+      "training/tree_pipeline.py": [
+        "probability",
+        "loss",
+        "affine_calibration",
+        "propagation_inputs",
+        "seed",
+        "model",
+        "predict"
+      ],
+      "training/graphsage.py": [
+        "probability",
+        "seed",
+        "affine",
+        "adj",
+        "SAGE",
+        "train"
+      ],
+      "training/temporal.py": [
+        "probability",
+        "model",
+        "calibrate",
+        "applycal"
+      ]
+    }
+  },
+  "mechanism_experiments": {
+    "shared_label_revision_20261020_v22/synthetic/run_analytical_v21.py": "608eb02c3ab49715c10f6123d5765e64541c891f01d2482d1d45f695b3fda8ea",
+    "shared_label_revision_20261019_v18/theory/controlled/finite_binomial_intervals_v18.py": "97c6605fd3b035a00b4b8ca873a9d04f2ca2a54d01dcde7c8d969f9eee7bfc06",
+    "shared_label_revision_20261020_v22/synthetic/run_known_probability_v22.py": "69171d2529b8b574b3858abf2cf7b6193c4c68ff55224c4d91fe409b4e9efbb5",
+    "shared_label_revision_20261020_v23/dependence_study/run_dependence_v23.py": "fda18f2e9c5cda76284cf2e356c253d7dc5b169043dcf9cbdb35d731228d507b",
+    "shared_label_revision_20261019_v18/theory/controlled/run_finite_stress_v18.py": "dc2da4e81b923d3f2eaf09d54490c8d3bc45e386eb275f0bbbdaf58c36e89431",
+    "shared_label_revision_20261021_v25/queue_study/run_queue_v25.py": "a3a6e3586450eed1f8d638ed58079fa4344a623f0d64ecb36d3191a1ff8fea01"
+  },
+  "added_logit_control": {
+    "original": "shared_label_revision_20261021_v26/baselines/run_baselines_v26.py",
+    "original_sha256": "1fac5ca9589ca60db7755a3d4763bb8e594ecc9f62d4ec18d01650cacc90f64a",
+    "exported": "allocation.py:_logit_path/logit_matched_binary",
+    "changes": "Same capped endpoint, SciPy log-odds map, feasible endpoint and 58-step bisection; array conversion and public record names added."
+  },
+  "portable_frontends": "io.py, frozen.py, summarize.py, data interfaces, CLI entry points and examples are release adapters around the recorded computational sources."
+}
